@@ -21,7 +21,6 @@ static void getTextFile(int clientFd, char *buffer, const char *fileName) {
     if (fileName[0] == '\0') {
         writer(clientFd, "SERVER 500 Get Error\n");
     } else {
-        // open file for reading
         FILE *filePointer = fopen(fileName, "r");
         
         // if successful, read all lines into the buffer
